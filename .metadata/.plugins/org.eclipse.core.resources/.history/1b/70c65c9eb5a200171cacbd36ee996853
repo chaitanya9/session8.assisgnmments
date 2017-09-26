@@ -1,0 +1,22 @@
+package com.example.concatudf;
+
+import org.apache.hadoop.hive.ql.exec.UDF;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+public class ConcatStrUDF extends UDF{
+	public String evaluate(String SEP, ArrayList<String> StrList){
+		
+		return StrList.stream().map(u->u.toString()).collect(Collectors.joining(SEP));
+       /* String output = new String();
+        if(StringList.isEmpty()){
+            return null;
+        } else {
+            for (String element : StringList) {
+                output = output.concat(element + SEP);
+            }
+            return output.toString();
+        }*/
+    }
+
+}

@@ -1,0 +1,19 @@
+package com.example.concatudf;
+
+import org.apache.hadoop.hive.ql.exec.UDF;
+import java.util.ArrayList;
+
+public class ConcatStrUDF extends UDF{
+	public String evaluate(String SEP, ArrayList<String> StringList){
+        String output = null;
+        if(StringList.isEmpty()){
+            return null;
+        } else {
+            for (String element : StringList) {
+                output = output + element + SEP;
+            }
+            return output;
+        }
+    }
+
+}

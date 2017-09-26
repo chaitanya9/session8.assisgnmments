@@ -1,0 +1,5 @@
+package com.example.concatudf;
+
+public class ConcatStrUDF {
+
+}
